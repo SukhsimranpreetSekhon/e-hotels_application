@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ch-cn">
+<title>Register Employee</title>
+</head>
+<script>
+
+	function validate(){
+		
+		var custSSN = document.getElementById("custSSN");
+		var custFirstName = document.getElementById("firstName");
+		var custMiddleInitial = document.getElementById("middleInitial");
+		var custLastName = document.getElementById("lastName");
+		
+		var custPwd = document.getElementById("custPwd");
+		var custPwdagain = document.getElementById("custPwdagain");
+		
+		var custStreetName = document.getElementById("streetName");
+		var custStreetNumber = document.getElementById("streetNumber");
+		var custZipPostal = document.getElementById("postal");
+		var custCity = document.getElementById("city");
+		var custProvince = document.getElementById("province");
+		
+		if(custSSN.value == "" || custFirstName.value == "" || custMiddleInitial.value == "" || custLastName.value == ""){
+			alert("You need to fill all customer information");
+			return false;
+		}
+		
+		else if(custPwd.value == "" || custPwdagain.value == ""){
+			alert("Please enter both passwords");
+			return false;
+		}
+		
+		/*else if(custSSN.value.length >9){
+			alert("The length of SSN needs to be between 1 - 9");
+			return false;
+		}*/
+		
+		else if(custStreetName.value == "" || custStreetNumber.value == "" || custZipPostal.value == "" || custCity.value == "" || custProvince.value == ""){
+			alert("Please enter a valid address");
+			return false;
+		}
+		
+		else if(custPwd.value != custPwdagain.value){
+			alert("Passwords need to be the same");
+			return false;
+		}
+		
+		
+	}
+
+</script>
+</head>
+<body>
+<form method = "post" action="employeeRegister">
+<center>
+<table cellpadding=6 cellspacing=4 width = 40% ><tr><th style='font-size:300%;' colspan=2 bgcolor="lightgrey">Employee Register</th></tr>
+<tr><td colspan=2 style = 'font-size:150%;' align = center ><u>Please Input Employee Information</u></td></tr>
+<tr><td colspan=3>&nbsp;</td></tr>
+<tr><td align=left>First Name:</td><td align=center><input type="text" id="firstName" name="firstName"></td></tr>
+<tr><td align=left>Middle Initial:</td><td align=center><input type="text" maxlength="1" id="middleInitial" name="middleInitial"></td></tr>
+<tr><td align=left>Last Name:</td><td align=center><input type="text" id="lastName" name="lastName"></td></tr>
+<tr><td align=left>State/Province:</td><td align=center><input type="text" id="province" name="province"></td></tr>
+<tr><td align=left>City:</td><td align=center><input type="text" id="city" name="city"></td></tr>
+<tr><td align=left>Zip/Postal:</td><td align=center><input type="text" id="postal" name="postal" maxlength ="7"></td></tr>
+<tr><td align=left>Street Name:</td><td align=center><input type="text" id="streetName" name="streetName"></td></tr>
+<tr><td align=left>Street Number:</td><td align=center><input type="text" id="streetNumber" name="streetNumber"></td></tr>
+<tr><td align=left>Employee SSN:</td><td align=center><input type="text" id="custSSN" name="custSSN"></td></tr>
+<tr><td align=left>Hotel id:</td><td align=center><input type="number" id="hotel_id" name="hotel_id"></td></tr>
+<tr><td align=left>Password:</td><td align=center><input type="password" id="custPwd" name="custPwd"></td></tr>
+<tr><td align=left>Confirm Password:</td><td align=center><input type="password" id="custPwdagain" name="custPwdagain"></td></tr>
+<tr><td colspan=3>&nbsp;</td></tr>
+<tr><td align = center ><button type="reset" value="reset"><b>Reset</b></button></td><td align = center>
+<button type="submit" value="submit" onclick="return validate();"><b>Submit</b></button></td></tr>
+</table>
+</center>
+</form>
+</body>
+</html>

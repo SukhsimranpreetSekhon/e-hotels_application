@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ch-cn">
+<title>Manager Login</title>
+</head>
+<body>
+<script>
+
+	function validate() {
+		var uname = document.getElementById("uname");
+		var upass = document.getElementById("upass");
+		if(uname.value == ""){
+			alert("username can't be null");
+			return false;
+		}
+		
+		else if(upass.value ==""){
+			alert("password can't be null");
+			return false;
+		}
+		else
+			return true;
+	}
+
+</script>
+</head>
+<body>
+
+	<form method="post" action="manlogin">
+
+	<center>
+	<table cellpadding=6 cellspacing=4 width = 33% ><tr><th style='font-size:300%;' colspan=2 bgcolor="lightgrey"> Customer Login</th></tr>
+	<tr><td colspan=2 style = 'font-size:150%;' align = center ><u>Please Input Your Information</u></td></tr>
+	<tr><td colspan=2>&nbsp;</td></tr>
+	<tr><td>
+		Manager SSN:</td><td align = center><input type="number" id="uname" name="userSSN"></td></tr>
+		<tr><td>Manager Password:</td><td align = center><input type="password" id="upass" name="pwd"></td></tr>
+		<tr><td colspan=2>&nbsp;</td></tr>
+		<tr><td align= center><button type="reset" value="reset"><b>reset</b></button></td><td align = center>
+		<button type="submit" value="submit" onclick="return validate();"><b>Register New Employee</b></button></td></tr>
+		</table>
+		</center>
+	</form>
+</body>
+</body>
+</html>
